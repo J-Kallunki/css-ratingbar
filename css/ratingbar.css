@@ -1,0 +1,56 @@
+.nakkebar {
+    max-width: 80px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    white-space: nowrap;
+    white-space-collapsing: discard;
+    font-size: 0;
+}
+
+.nakkebar .nakkelabel {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.nakkebar .nakkelabel:before,.nakkebar .nakkelabel:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ''
+}
+
+.nakkebar .nakkelabel:after {
+    width: 18px;
+    height: 18px;
+    padding: 1px;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23FFD203'%3E%3Cpath d='M512,198.52l-192.709-3.924L255.995,12.524l-63.288,182.071L0,198.52l153.599,116.463L97.781,499.476l158.214-110.103l158.229,110.103l-55.831-184.493L512,198.52z M359.202,423.764L255.994,351.94l-103.207,71.823l36.414-120.35L89.003,227.448l125.708-2.566l41.292-118.773l41.283,118.773l125.699,2.566l-100.2,75.967L359.202,423.764z'/%3E%3C/svg%3E");
+}
+
+.nakkebar .nakkeradio {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden
+}
+
+.nakkebar:not(:hover) .nakkeradio:checked ~ .nakkelabel:after,.nakkebar .nakkelabel:hover:after,.nakkebar .nakkelabel:hover ~ .nakkelabel:after {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23FFD203'%3E%3Cpolygon points='256,389.375 97.781,499.477 153.601,314.977 0,198.523 192.71,194.59 256,12.523 319.297,194.59 512,198.523 358.399,314.977 414.226,499.477'/%3E%3C/svg%3E")
+}
+
+.nakkebar:not(:hover) .nakkeradio:checked ~ .nakkelabel:before,.nakkebar .nakkelabel:hover:before,.nakkebar .nakkelabel:hover ~ .nakkelabel:before {
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23E8720C'%3E%3Cpolygon points='256,389.375 97.781,499.477 153.601,314.977 0,198.523 192.71,194.59 256,12.523 319.297,194.59 512,198.523 358.399,314.977 414.226,499.477'/%3E%3C/svg%3E");
+}
+
+.nakkebar {
+    margin: 24px 18px
+}

@@ -3,7 +3,7 @@
 HTML standards-compliant ratingbar with CSS. (Only HTML non preferred complete unchecking with JS)  
 
 screenshot:  
-![screenshot][image]
+[![screenshot][image]](http://codepen.io/jkallunki/pen/ORRbwZ)
 
 check live sample here http://codepen.io/jkallunki/pen/ORRbwZ
 

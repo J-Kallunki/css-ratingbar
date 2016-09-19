@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Joonas Kallunki – Ratingbar demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="css/ratingbar.css">
+  </head>
+  <body>
+
+  <form class="nakkebar">
+    <input type="radio" name="nakkerating" value="0" id="value-4" class="nakkeradio nakkeradio-4"><label for="value-4" class="nakkelabel">0</label>
+    <input type="radio" name="nakkerating" value="3" id="value-3" class="nakkeradio nakkeradio-3"><label for="value-3" class="nakkelabel">3</label>
+    <input type="radio" name="nakkerating" value="2" id="value-2" class="nakkeradio nakkeradio-2"><label for="value-2" class="nakkelabel">2</label>
+    <input type="radio" name="nakkerating" value="1" id="value-1" class="nakkeradio nakkeradio-1"><label for="value-1" class="nakkelabel">1</label>
+  </form>
+
+  <script type="text/javascript">
+    // Simple script to demonstrate non-html method of unchecking value
+    var allRadios = document.getElementsByName('nakkerating'),
+      allRadiosL = allRadios.length,
+      setRadio;
+    for(i = 0; i < allRadiosL; i++){
+        allRadios[i].onclick = function() {
+            if(setRadio == this){
+                this.checked = false;
+                setRadio = null;
+            }else{
+                setRadio = this;
+            }
+        };
+    }
+  </script>
+
+  </body>
+</html>

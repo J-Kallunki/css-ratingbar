@@ -11,6 +11,10 @@ check live sample here http://codepen.io/jkallunki/pen/ORRbwZ
 
 Stylus (css):
 ```stylus
+// Settings
+$iconSize = 20px
+$iconPadding = 1px
+
 .nakkebar
   max-width $iconSize * 4
   unicode-bidi bidi-override
@@ -34,8 +38,8 @@ Stylus (css):
       right 0
       content ''
     &:after
-      smallerSize()
-      iconImage(1)
+      smallerSize() //func calculates from $iconSize
+      iconImage(1) //func adds background image
   .nakkeradio
     position absolute
     margin-left -9999px
@@ -46,11 +50,11 @@ Stylus (css):
   .nakkelabel:hover ~ .nakkelabel:after
     width $iconSize
     height $iconSize
-    iconImage(3)
+    iconImage(3) //func adds background image
   &:not(:hover) .nakkeradio:checked ~ .nakkelabel:before,
   .nakkelabel:hover:before,
   .nakkelabel:hover ~ .nakkelabel:before
-    iconImage(2)
+    iconImage(2) //func adds background image
 ```
 HTML:
 ```html

@@ -1,6 +1,6 @@
 # CSS-ratingbar
 
-HTML standards-compliant ratingbar with CSS. (complete unchecking via JS)  
+HTML standards-compliant ratingbar with CSS. (Only HTML non preferred complete unchecking with JS)  
 
 screenshot:  
 ![screenshot][image]

@@ -2,10 +2,7 @@
 
 HTML standards-compliant ratingbar with CSS. (Only HTML non preferred complete unchecking with JS)  
 
-screenshot:  
-[![screenshot][image]](http://codepen.io/jkallunki/pen/ORRbwZ)
-
-check live sample here http://codepen.io/jkallunki/pen/ORRbwZ
+:green_apple: [**demo**](https://j-kallunki.github.io/css-ratingbar/)
 
 [image]: https://raw.githubusercontent.com/J-Kallunki/css-ratingbar/master/Screen%20Shot%202016-09-19%20at%2009.55.57.png
 

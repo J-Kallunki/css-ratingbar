@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Css-ratingbar by J-Kallunki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Css-ratingbar</h1>
+      <h2 class="project-tagline">HTML standards-compliant ratingbar/star-rating with CSS.</h2>
+      <a href="https://github.com/J-Kallunki/css-ratingbar" class="btn">View on GitHub</a>
+      <a href="https://github.com/J-Kallunki/css-ratingbar/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/J-Kallunki/css-ratingbar/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="css-ratingbar" class="anchor" href="#css-ratingbar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CSS-ratingbar</h1>
+
+<p>HTML standards-compliant ratingbar with CSS. (Only HTML non preferred complete unchecking with JS)  </p>
+
+<p>screenshot:<br>
+<a href="http://codepen.io/jkallunki/pen/ORRbwZ"><img src="https://raw.githubusercontent.com/J-Kallunki/css-ratingbar/master/Screen%20Shot%202016-09-19%20at%2009.55.57.png" alt="screenshot"></a></p>
+
+<p>check live sample here <a href="http://codepen.io/jkallunki/pen/ORRbwZ">http://codepen.io/jkallunki/pen/ORRbwZ</a></p>
+
+<p>Stylus (css):</p>
+
+<div class="highlight highlight-source-stylus"><pre><span class="pl-c">// Settings</span>
+<span class="pl-smi">$iconSize</span> <span class="pl-k">=</span> <span class="pl-c1">20<span class="pl-k">px</span></span>
+<span class="pl-smi">$iconPadding</span> <span class="pl-k">=</span> <span class="pl-c1">1<span class="pl-k">px</span></span>
+
+<span class="pl-e">.nakkebar</span>
+  <span class="pl-c1">max-width</span> <span class="pl-smi">$iconSize</span> <span class="pl-k">*</span> <span class="pl-c1">4</span>
+  <span class="pl-c1">unicode-bidi</span> <span class="pl-c1">bidi-override</span>
+  <span class="pl-c1">direction</span> <span class="pl-c1">rtl</span>
+  <span class="pl-c1">white-space</span> <span class="pl-c1">nowrap</span>
+  <span class="pl-c1">white-space-collapsing</span> <span class="pl-smi">discard</span>
+  <span class="pl-c1">font-size</span> <span class="pl-c1">0</span>
+  <span class="pl-e">.nakkelabel</span>
+    <span class="pl-c1">display</span> <span class="pl-c1">inline-block</span>
+    <span class="pl-c1">position</span> <span class="pl-c1">relative</span>
+    <span class="pl-c1">width</span> <span class="pl-smi">$iconSize</span>
+    <span class="pl-c1">height</span> <span class="pl-smi">$iconSize</span>
+    <span class="pl-c1">overflow</span> <span class="pl-c1">hidden</span>
+    <span class="pl-c1">cursor</span> <span class="pl-c1">pointer</span>
+    <span class="pl-v">&amp;</span><span class="pl-e">:before</span>,
+    <span class="pl-v">&amp;</span><span class="pl-e">:after</span>
+      <span class="pl-c1">position</span> <span class="pl-c1">absolute</span>
+      <span class="pl-c1">top</span> <span class="pl-c1">0</span>
+      <span class="pl-c1">left</span> <span class="pl-c1">0</span>
+      <span class="pl-c1">bottom</span> <span class="pl-c1">0</span>
+      <span class="pl-c1">right</span> <span class="pl-c1">0</span>
+      <span class="pl-c1">content</span> <span class="pl-s">''</span>
+    <span class="pl-v">&amp;</span><span class="pl-e">:after</span>
+      <span class="pl-e">smallerSize</span>() <span class="pl-c">//func calculates from $iconSize</span>
+      <span class="pl-e">iconImage</span>(<span class="pl-c1">1</span>) <span class="pl-c">//func adds background image</span>
+  <span class="pl-e">.nakkeradio</span>
+    <span class="pl-c1">position</span> <span class="pl-c1">absolute</span>
+    <span class="pl-c1">margin-left</span> <span class="pl-k">-</span><span class="pl-c1">9999<span class="pl-k">px</span></span>
+    <span class="pl-c1">visibility</span> <span class="pl-c1">hidden</span>
+  <span class="pl-c">// Styles for checked and hovered items</span>
+  <span class="pl-v">&amp;</span><span class="pl-e">:not</span>(<span class="pl-e">:hover</span>)<span class="pl-e"> </span><span class="pl-e">.nakkeradio</span><span class="pl-e">:checked</span><span class="pl-e"> </span><span class="pl-k">~</span><span class="pl-e"> </span><span class="pl-e">.nakkelabel</span><span class="pl-e">:after</span>,
+  <span class="pl-e">.nakkelabel</span><span class="pl-e">:hover</span><span class="pl-e">:after</span>,
+  <span class="pl-e">.nakkelabel</span><span class="pl-e">:hover</span><span class="pl-e"> </span><span class="pl-k">~</span><span class="pl-e"> </span><span class="pl-e">.nakkelabel</span><span class="pl-e">:after</span>
+    <span class="pl-c1">width</span> <span class="pl-smi">$iconSize</span>
+    <span class="pl-c1">height</span> <span class="pl-smi">$iconSize</span>
+    <span class="pl-e">iconImage</span>(<span class="pl-c1">3</span>) <span class="pl-c">//func adds background image</span>
+  <span class="pl-v">&amp;</span><span class="pl-e">:not</span>(<span class="pl-e">:hover</span>)<span class="pl-e"> </span><span class="pl-e">.nakkeradio</span><span class="pl-e">:checked</span><span class="pl-e"> </span><span class="pl-k">~</span><span class="pl-e"> </span><span class="pl-e">.nakkelabel</span><span class="pl-e">:before</span>,
+  <span class="pl-e">.nakkelabel</span><span class="pl-e">:hover</span><span class="pl-e">:before</span>,
+  <span class="pl-e">.nakkelabel</span><span class="pl-e">:hover</span><span class="pl-e"> </span><span class="pl-k">~</span><span class="pl-e"> </span><span class="pl-e">.nakkelabel</span><span class="pl-e">:before</span>
+    <span class="pl-e">iconImage</span>(<span class="pl-c1">2</span>) <span class="pl-c">//func adds background image</span></pre></div>
+
+<p>HTML:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkebar<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>radio<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkerating<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>value-4<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkeradio nakkeradio-4<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>value-4<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkelabel<span class="pl-pds">"</span></span>&gt;4&lt;/<span class="pl-ent">label</span>&gt;
+    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>radio<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkerating<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>value-3<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkeradio nakkeradio-3<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>value-3<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkelabel<span class="pl-pds">"</span></span>&gt;3&lt;/<span class="pl-ent">label</span>&gt;
+    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>radio<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkerating<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>value-2<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkeradio nakkeradio-2<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>value-2<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkelabel<span class="pl-pds">"</span></span>&gt;2&lt;/<span class="pl-ent">label</span>&gt;
+    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>radio<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkerating<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>value-1<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkeradio nakkeradio-1<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>value-1<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nakkelabel<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">label</span>&gt;
+&lt;/<span class="pl-ent">form</span>&gt;</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/J-Kallunki/css-ratingbar">Css-ratingbar</a> is maintained by <a href="https://github.com/J-Kallunki">J-Kallunki</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
